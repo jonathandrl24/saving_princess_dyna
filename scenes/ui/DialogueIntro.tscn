@@ -1,0 +1,75 @@
+[gd_scene load_steps=2 format=3 uid="uid://dialogue_intro"]
+
+[ext_resource type="Script" path="res://scripts/DialogueIntro.gd" id="1"]
+
+[node name="DialogueIntro" type="Control"]
+script = ExtResource("1")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.02, 0.05, 0.12, 1)
+
+[node name="Panel" type="PanelContainer" parent="."]
+anchors_preset = 12
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -200.0
+theme_override_styles/panel = StyleBoxFlat.new()
+
+[node name="HBox" type="HBoxContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Avatar" type="Label" parent="Panel/HBox"]
+custom_minimum_size = Vector2(80, 0)
+theme_override_font_sizes/font_size = 64
+text = "🪖"
+
+[node name="Content" type="VBoxContainer" parent="Panel/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SpeakerName" type="Label" parent="Panel/HBox/Content"]
+layout_mode = 2
+text = "IMPERIAL SOLDIER"
+theme_override_colors/font_color = Color(1, 0.5, 0.1, 1)
+theme_override_font_sizes/font_size = 14
+
+[node name="DialogueText" type="Label" parent="Panel/HBox/Content"]
+layout_mode = 2
+text = ""
+autowrap_mode = 3
+theme_override_colors/font_color = Color(0.78, 0.9, 0.97, 1)
+theme_override_font_sizes/font_size = 20
+
+[node name="Tag" type="Label" parent="Panel/HBox/Content"]
+layout_mode = 2
+text = "// ..."
+theme_override_colors/font_color = Color(0.29, 0.48, 0.6, 1)
+theme_override_font_sizes/font_size = 12
+
+[node name="ContinueHint" type="Label" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_top = -30.0
+text = "[ SPACE / CLICK ] — Continue"
+theme_override_colors/font_color = Color(0.4, 0.7, 0.8, 0.7)
+theme_override_font_sizes/font_size = 13
+
+[node name="SkipButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+offset_left = -100.0
+offset_bottom = 36.0
+text = "SKIP ▶▶"

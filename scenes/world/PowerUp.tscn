@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://powerup"]
+
+[ext_resource type="Script" path="res://scripts/PowerUp.gd" id="1"]
+
+[node name="PowerUp" type="Area2D"]
+script = ExtResource("1")
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = CircleShape2D.new()
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+position = Vector2(-16, -30)
+custom_minimum_size = Vector2(32, 20)
+text = "+"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 11

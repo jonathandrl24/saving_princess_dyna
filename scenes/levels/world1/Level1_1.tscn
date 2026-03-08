@@ -1,0 +1,118 @@
+[gd_scene load_steps=6 format=3 uid="uid://level1_1"]
+
+[ext_resource type="PackedScene" path="res://scenes/player/Player.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/ui/HUD.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/EnemySoldier.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/world/PowerUp.tscn" id="4"]
+[ext_resource type="Script" path="res://scripts/BaseLevel.gd" id="5"]
+
+[node name="Level1_1" type="Node2D"]
+script = ExtResource("5")
+world_number = 1
+level_number = 1
+world_music_key = "world1"
+
+[node name="HUD" parent="." instance=ExtResource("2")]
+
+[node name="Player" parent="." instance=ExtResource("1")]
+position = Vector2(120, 400)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = null
+format = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Ground" type="StaticBody2D" parent="Platforms"]
+add_to_group = ["terrain"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Ground"]
+position = Vector2(640, 680)
+shape = RectangleShape2D.new()
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Ground"]
+position = Vector2(640, 680)
+modulate = Color(0.3, 0.2, 0.15, 1)
+
+[node name="Platform1" type="StaticBody2D" parent="Platforms"]
+position = Vector2(300, 530)
+add_to_group = ["terrain"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform1"]
+shape = RectangleShape2D.new()
+
+[node name="Platform2" type="StaticBody2D" parent="Platforms"]
+position = Vector2(560, 440)
+add_to_group = ["terrain"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform2"]
+shape = RectangleShape2D.new()
+
+[node name="Platform3" type="StaticBody2D" parent="Platforms"]
+position = Vector2(820, 360)
+add_to_group = ["terrain"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Platform3"]
+shape = RectangleShape2D.new()
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="EnemySoldier1" parent="Enemies" instance=ExtResource("3")]
+position = Vector2(500, 620)
+
+[node name="EnemySoldier2" parent="Enemies" instance=ExtResource("3")]
+position = Vector2(800, 620)
+
+[node name="PowerUps" type="Node2D" parent="."]
+
+[node name="AmmoPickup" parent="PowerUps" instance=ExtResource("4")]
+position = Vector2(350, 500)
+
+[node name="HealthPickup" parent="PowerUps" instance=ExtResource("4")]
+position = Vector2(650, 400)
+
+[node name="SpamBox" parent="PowerUps" instance=ExtResource("4")]
+position = Vector2(900, 320)
+
+[node name="LevelExit" type="Area2D" parent="."]
+position = Vector2(1200, 580)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelExit"]
+shape = RectangleShape2D.new()
+
+[node name="ExitLabel" type="Label" parent="LevelExit"]
+position = Vector2(-40, -40)
+text = "► NEXT"
+theme_override_colors/font_color = Color(0, 1, 0.5, 1)
+
+[node name="PauseMenu" type="Control" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+visible = false
+process_mode = 3
+
+[node name="Background" type="ColorRect" parent="PauseMenu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.7)
+
+[node name="Label" type="Label" parent="PauseMenu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -60.0
+offset_right = 100.0
+offset_bottom = 60.0
+text = "PAUSED\n\n[ESC] Resume\n[M] Main Menu"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0, 0.83, 1, 1)
+theme_override_font_sizes/font_size = 28

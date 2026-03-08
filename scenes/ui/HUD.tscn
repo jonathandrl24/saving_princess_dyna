@@ -1,0 +1,96 @@
+[gd_scene load_steps=2 format=3 uid="uid://hud_main"]
+
+[ext_resource type="Script" path="res://scripts/HUD.gd" id="1"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1")
+layer = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TopRow" type="HBoxContainer" parent="MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="HealthLabel" type="Label" parent="MarginContainer/VBox/TopRow"]
+layout_mode = 2
+text = "HP: 100/100"
+theme_override_colors/font_color = Color(0, 1, 0.5, 1)
+
+[node name="HealthBar" type="ProgressBar" parent="MarginContainer/VBox/TopRow"]
+layout_mode = 2
+custom_minimum_size = Vector2(150, 18)
+max_value = 100.0
+value = 100.0
+show_percentage = false
+
+[node name="AmmoLabel" type="Label" parent="MarginContainer/VBox/TopRow"]
+layout_mode = 2
+text = "AMMO: 30"
+theme_override_colors/font_color = Color(0, 0.83, 1, 1)
+
+[node name="LivesLabel" type="Label" parent="MarginContainer/VBox/TopRow"]
+layout_mode = 2
+text = "♥ x3"
+theme_override_colors/font_color = Color(1, 0.2, 0.4, 1)
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer/VBox/TopRow"]
+layout_mode = 2
+text = "SCORE: 0"
+theme_override_colors/font_color = Color(1, 0.85, 0, 1)
+
+[node name="WorldLabel" type="Label" parent="MarginContainer/VBox/TopRow"]
+layout_mode = 2
+text = "WORLD 1"
+theme_override_colors/font_color = Color(0, 0.83, 1, 1)
+
+[node name="SpamBar" type="ProgressBar" parent="MarginContainer/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(300, 14)
+max_value = 5.0
+value = 5.0
+show_percentage = false
+modulate = Color(1, 0.9, 0, 1)
+visible = false
+
+[node name="SpamLabel" type="Label" parent="MarginContainer/VBox"]
+layout_mode = 2
+text = "⚡ SPAM MODE ACTIVE ⚡"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(1, 0.9, 0, 1)
+visible = false
+
+[node name="BossHealthContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -70.0
+offset_right = 300.0
+offset_bottom = -10.0
+visible = false
+
+[node name="BossNameLabel" type="Label" parent="BossHealthContainer"]
+layout_mode = 2
+text = "— BOSS —"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(1, 0.3, 0.3, 1)
+
+[node name="BossHealthBar" type="ProgressBar" parent="BossHealthContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(600, 24)
+max_value = 300.0
+value = 300.0
+show_percentage = false
+modulate = Color(1, 0.2, 0.2, 1)

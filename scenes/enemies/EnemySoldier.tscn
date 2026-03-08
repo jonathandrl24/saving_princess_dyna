@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://enemy_soldier"]
+
+[ext_resource type="Script" path="res://scripts/EnemySoldier.gd" id="1"]
+
+[node name="EnemySoldier" type="CharacterBody2D"]
+script = ExtResource("1")
+collision_layer = 4
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = CapsuleShape2D.new()
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.4, 0.8, 0.4, 1)
+
+[node name="ShootPoint" type="Marker2D" parent="."]
+position = Vector2(20, -8)
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+add_to_group = ["enemy_hurtbox"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = CapsuleShape2D.new()
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = CapsuleShape2D.new()
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+position = Vector2(-20, -50)
+custom_minimum_size = Vector2(40, 6)
+max_value = 30.0
+value = 30.0
+show_percentage = false
+modulate = Color(1, 0.2, 0.2, 1)
+
+[node name="FireTimer" type="Timer" parent="."]
+wait_time = 1.5
