@@ -1,0 +1,676 @@
+[gd_scene format=3 uid="uid://bs07xbdiermjx"]
+
+[ext_resource type="Texture2D" uid="uid://b8ofowjv3dmcm" path="res://Assets/environment/layers/APOCALIPTIC CITY 1.png" id="1_7xos2"]
+[ext_resource type="Texture2D" uid="uid://p5xdxvn4ac65" path="res://Assets/environment/props/crate.png" id="2_j6d32"]
+[ext_resource type="AudioStream" uid="uid://chvoflm2mmkth" path="res://Assets/SoundFX/FireFX.mp3" id="3_oppro"]
+[ext_resource type="AudioStream" uid="uid://c45iy8krn5ub3" path="res://Assets/SoundFX/PoliceSiren.mp3" id="4_mc4cw"]
+[ext_resource type="Texture2D" uid="uid://deb0absbn00e2" path="res://Assets/environment/props/ALIEN_SHIP.png" id="5_5o2w4"]
+[ext_resource type="Script" uid="uid://c6i4dgflhmwfy" path="res://scripts/jugador.gd" id="6_cmq6a"]
+[ext_resource type="Texture2D" uid="uid://btg60xj0svjon" path="res://Assets/spritesheets/Player/Space Soldier Sprite Sheet.png" id="6_dw6gl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j6d32"]
+size = Vector2(20, 17.771423)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5o2w4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dw6gl"]
+size = Vector2(12, 738)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpmwn"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnj4f"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hn5fe"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8yva"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14gor"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ma3t"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcb7p"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgv1i"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hje3p"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2o3no"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0xkc"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fttli"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nfbn"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqqm4"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_782i2"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewgiw"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2raqt"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c13h5"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(128, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yh2k"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(160, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa7q7"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(192, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5oouu"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(224, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c12f3"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqna8"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opx7r"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fximn"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nx6k5"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a8yva"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpmwn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gnj4f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hn5fe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8yva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14gor")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ma3t")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcb7p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgv1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hje3p")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2o3no")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0xkc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fttli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nfbn")
+}],
+"loop": true,
+"name": &"Static",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqqm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_782i2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewgiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2raqt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c13h5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4yh2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oa7q7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5oouu")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c12f3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqna8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opx7r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fximn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nx6k5")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}]
+
+[node name="Level1_1" type="Node2D" unique_id=1624383069]
+
+[node name="Fondo" type="Node2D" parent="." unique_id=873150402]
+
+[node name="ApocalipticCity1" type="Sprite2D" parent="Fondo" unique_id=2034767285]
+texture_filter = 4
+texture_repeat = 3
+position = Vector2(642.5, 361)
+scale = Vector2(0.98085755, 0.879902)
+texture = ExtResource("1_7xos2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Fondo" unique_id=1060435883]
+stream = ExtResource("3_oppro")
+volume_db = -5.821
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Fondo" unique_id=989824246]
+stream = ExtResource("4_mc4cw")
+volume_db = -29.881
+autoplay = true
+
+[node name="AlienShip" type="Sprite2D" parent="Fondo" unique_id=1712978827]
+position = Vector2(1140, 51.000004)
+scale = Vector2(0.12850805, 0.09959348)
+texture = ExtResource("5_5o2w4")
+
+[node name="AlienShip2" type="Sprite2D" parent="Fondo" unique_id=1650995828]
+texture_filter = 5
+texture_repeat = 3
+position = Vector2(430.1875, 134.3125)
+scale = Vector2(0.15011078, 0.16632788)
+texture = ExtResource("5_5o2w4")
+
+[node name="Suelo" type="Node2D" parent="." unique_id=2050890232]
+
+[node name="Crate" type="Sprite2D" parent="Suelo" unique_id=1022108816]
+position = Vector2(20.000011, 704)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate" unique_id=343701810]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate2" type="Sprite2D" parent="Suelo" unique_id=32098073]
+position = Vector2(55, 704)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate2" unique_id=732311805]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate3" type="Sprite2D" parent="Suelo" unique_id=188750683]
+position = Vector2(90.5, 704.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate3" unique_id=1696459846]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate4" type="Sprite2D" parent="Suelo" unique_id=1175467852]
+position = Vector2(125.49999, 704.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate4" unique_id=1019300129]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate5" type="Sprite2D" parent="Suelo" unique_id=1841459015]
+position = Vector2(160.5, 704.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate5" unique_id=1112626925]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate6" type="Sprite2D" parent="Suelo" unique_id=1740628132]
+position = Vector2(195.49998, 704.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate6" unique_id=405731384]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate7" type="Sprite2D" parent="Suelo" unique_id=1676316752]
+position = Vector2(230.99998, 705)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate7" unique_id=537437149]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate8" type="Sprite2D" parent="Suelo" unique_id=1864173103]
+position = Vector2(266, 705)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate8" unique_id=138738275]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate9" type="Sprite2D" parent="Suelo" unique_id=1289790302]
+position = Vector2(303.00003, 706)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate9" unique_id=1618759170]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate10" type="Sprite2D" parent="Suelo" unique_id=1639729764]
+position = Vector2(20.000011, 704)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate10" unique_id=829964098]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate11" type="Sprite2D" parent="Suelo" unique_id=700155372]
+position = Vector2(340.49997, 706.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate11" unique_id=1277003576]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate12" type="Sprite2D" parent="Suelo" unique_id=1264314317]
+position = Vector2(375.99997, 707)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate12" unique_id=505686405]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate13" type="Sprite2D" parent="Suelo" unique_id=1405313403]
+position = Vector2(410.99997, 707)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate13" unique_id=1732576279]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate14" type="Sprite2D" parent="Suelo" unique_id=381222090]
+position = Vector2(445.99997, 707)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate14" unique_id=634147759]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate15" type="Sprite2D" parent="Suelo" unique_id=964841694]
+position = Vector2(480.99994, 707)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate15" unique_id=907691224]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate16" type="Sprite2D" parent="Suelo" unique_id=550101807]
+position = Vector2(516.49994, 707.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate16" unique_id=676489588]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate17" type="Sprite2D" parent="Suelo" unique_id=736791975]
+position = Vector2(551.5, 707.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate17" unique_id=1908584290]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate18" type="Sprite2D" parent="Suelo" unique_id=1493579801]
+position = Vector2(588.5, 708.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate18" unique_id=475674081]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate19" type="Sprite2D" parent="Suelo" unique_id=1762663127]
+position = Vector2(625.49994, 708.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate19" unique_id=1388684449]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate20" type="Sprite2D" parent="Suelo" unique_id=601674920]
+position = Vector2(660.49994, 708.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate20" unique_id=2003831448]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate21" type="Sprite2D" parent="Suelo" unique_id=502867128]
+position = Vector2(695.99994, 709)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate21" unique_id=1258284327]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate22" type="Sprite2D" parent="Suelo" unique_id=4422224]
+position = Vector2(730.99994, 709)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate22" unique_id=1916507436]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate23" type="Sprite2D" parent="Suelo" unique_id=380901096]
+position = Vector2(765.99994, 709)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate23" unique_id=1427058378]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate24" type="Sprite2D" parent="Suelo" unique_id=976055731]
+position = Vector2(800.99994, 709)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate24" unique_id=413411591]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate25" type="Sprite2D" parent="Suelo" unique_id=1028220910]
+position = Vector2(836.49994, 709.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate25" unique_id=112037450]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate26" type="Sprite2D" parent="Suelo" unique_id=132490434]
+position = Vector2(871.49994, 709.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate26" unique_id=1543847090]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate27" type="Sprite2D" parent="Suelo" unique_id=217212918]
+position = Vector2(908.5, 710.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate27" unique_id=252034045]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate28" type="Sprite2D" parent="Suelo" unique_id=962782853]
+position = Vector2(625.49994, 708.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate28" unique_id=1817264391]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate29" type="Sprite2D" parent="Suelo" unique_id=2095257724]
+position = Vector2(945.9999, 711)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate29" unique_id=721795292]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate30" type="Sprite2D" parent="Suelo" unique_id=1806789515]
+position = Vector2(981.4999, 711.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate30" unique_id=815285969]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate31" type="Sprite2D" parent="Suelo" unique_id=1774634211]
+position = Vector2(1016.4999, 711.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate31" unique_id=1939653561]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate32" type="Sprite2D" parent="Suelo" unique_id=509938475]
+position = Vector2(1051.4999, 711.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate32" unique_id=1611214948]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate33" type="Sprite2D" parent="Suelo" unique_id=1335557312]
+position = Vector2(1086.4999, 711.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate33" unique_id=749729391]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate34" type="Sprite2D" parent="Suelo" unique_id=676570895]
+position = Vector2(1121.9999, 712)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate34" unique_id=1030120481]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate35" type="Sprite2D" parent="Suelo" unique_id=1512579466]
+position = Vector2(1157, 712)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate35" unique_id=1088036147]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate36" type="Sprite2D" parent="Suelo" unique_id=365570919]
+position = Vector2(1194, 713)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate36" unique_id=541039404]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate37" type="Sprite2D" parent="Suelo" unique_id=906899628]
+position = Vector2(1231.5, 713.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate37" unique_id=1858753840]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Crate38" type="Sprite2D" parent="Suelo" unique_id=629646325]
+position = Vector2(1268.5, 714.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Crate38" unique_id=813611210]
+position = Vector2(0, 1.1142883)
+scale = Vector2(0.99999994, 1)
+shape = SubResource("RectangleShape2D_j6d32")
+
+[node name="Lateral" type="StaticBody2D" parent="Suelo" unique_id=1884924700]
+physics_material_override = SubResource("PhysicsMaterial_5o2w4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Lateral" unique_id=730252271]
+position = Vector2(-4, 359)
+shape = SubResource("RectangleShape2D_dw6gl")
+
+[node name="Lateral2" type="StaticBody2D" parent="Suelo" unique_id=191655194]
+physics_material_override = SubResource("PhysicsMaterial_5o2w4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Lateral2" unique_id=969326821]
+position = Vector2(1283, 359)
+shape = SubResource("RectangleShape2D_dw6gl")
+
+[node name="Player" type="Node2D" parent="." unique_id=960125175]
+
+[node name="jugador" type="CharacterBody2D" parent="Player" unique_id=1683039098]
+script = ExtResource("6_cmq6a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player/jugador" unique_id=1980371250]
+process_mode = 2
+physics_interpolation_mode = 1
+auto_translate_mode = 1
+top_level = true
+light_mask = 1023
+visibility_layer = 1023
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(62, 641.00006)
+scale = Vector2(3.65625, 3.645105)
+sprite_frames = SubResource("SpriteFrames_a8yva")
+animation = &"Static"
+autoplay = "Static"

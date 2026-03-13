@@ -1,0 +1,854 @@
+[gd_scene format=3 uid="uid://bs07xbdiermjx"]
+
+[ext_resource type="Texture2D" uid="uid://b8ofowjv3dmcm" path="res://Assets/environment/layers/APOCALIPTIC CITY 1.png" id="1_7xos2"]
+[ext_resource type="Texture2D" uid="uid://p5xdxvn4ac65" path="res://Assets/environment/props/crate.png" id="2_j6d32"]
+[ext_resource type="AudioStream" uid="uid://chvoflm2mmkth" path="res://Assets/SoundFX/FireFX.mp3" id="3_oppro"]
+[ext_resource type="AudioStream" uid="uid://c45iy8krn5ub3" path="res://Assets/SoundFX/PoliceSiren.mp3" id="4_mc4cw"]
+[ext_resource type="Texture2D" uid="uid://deb0absbn00e2" path="res://Assets/environment/props/ALIEN_SHIP.png" id="5_5o2w4"]
+[ext_resource type="Script" uid="uid://c6i4dgflhmwfy" path="res://scripts/jugador.gd" id="6_cmq6a"]
+[ext_resource type="Texture2D" uid="uid://btg60xj0svjon" path="res://Assets/spritesheets/Player/Space Soldier Sprite Sheet.png" id="6_dw6gl"]
+[ext_resource type="AudioStream" uid="uid://87olrirhwqay" path="res://Assets/SoundFX/Basic_shoot_noise.ogg" id="8_2o3no"]
+[ext_resource type="AudioStream" uid="uid://da30pp14bikpd" path="res://Assets/SoundFX/Jump.ogg" id="9_jpmwn"]
+[ext_resource type="PackedScene" uid="uid://diemnd5evlklb" path="res://scenes/enemies/Enemigo.tscn" id="9_x0xkc"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5o2w4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dw6gl"]
+size = Vector2(12, 738)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmq6a"]
+size = Vector2(1294, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2o3no"]
+size = Vector2(282.5, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x0xkc"]
+size = Vector2(280, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpmwn"]
+size = Vector2(276, 30.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnj4f"]
+size = Vector2(276, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hn5fe"]
+size = Vector2(283, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8yva"]
+size = Vector2(281, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpmwn"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnj4f"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hn5fe"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8yva"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14gor"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ma3t"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcb7p"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgv1i"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hje3p"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2o3no"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0xkc"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fttli"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nfbn"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqqm4"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_782i2"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewgiw"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2raqt"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c13h5"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(128, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yh2k"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(160, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa7q7"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(192, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5oouu"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(224, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jn53x"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(224, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c12f3"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqna8"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opx7r"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fximn"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nx6k5"]
+atlas = ExtResource("6_dw6gl")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a8yva"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpmwn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gnj4f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hn5fe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8yva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14gor")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ma3t")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcb7p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgv1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hje3p")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2o3no")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0xkc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fttli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nfbn")
+}],
+"loop": true,
+"name": &"Static",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqqm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_782i2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewgiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2raqt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c13h5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4yh2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oa7q7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5oouu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jn53x")
+}],
+"loop": false,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c12f3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqna8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opx7r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fximn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nx6k5")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cmq6a"]
+radius = 12.0
+height = 52.0
+
+[node name="Level1_1" type="Node2D" unique_id=1624383069]
+
+[node name="Fondo" type="Node2D" parent="." unique_id=873150402]
+
+[node name="ApocalipticCity1" type="Sprite2D" parent="Fondo" unique_id=2034767285]
+texture_filter = 4
+texture_repeat = 3
+position = Vector2(642.5, 361)
+scale = Vector2(0.98085755, 0.879902)
+texture = ExtResource("1_7xos2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Fondo" unique_id=1060435883]
+stream = ExtResource("3_oppro")
+volume_db = -15.523
+autoplay = true
+playback_type = 1
+parameters/looping = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Fondo" unique_id=989824246]
+stream = ExtResource("4_mc4cw")
+volume_db = -29.881
+autoplay = true
+parameters/looping = true
+
+[node name="AlienShip" type="Sprite2D" parent="Fondo" unique_id=1712978827]
+position = Vector2(1140, 51.000004)
+scale = Vector2(0.12850805, 0.09959348)
+texture = ExtResource("5_5o2w4")
+
+[node name="AlienShip2" type="Sprite2D" parent="Fondo" unique_id=1650995828]
+texture_filter = 5
+texture_repeat = 3
+position = Vector2(421.6875, 127.3125)
+scale = Vector2(0.124999985, 0.12838751)
+texture = ExtResource("5_5o2w4")
+
+[node name="Suelo" type="Node2D" parent="." unique_id=2050890232]
+
+[node name="Crate" type="Sprite2D" parent="Suelo" unique_id=1022108816]
+position = Vector2(20.000011, 704)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate2" type="Sprite2D" parent="Suelo" unique_id=32098073]
+position = Vector2(55, 704)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate3" type="Sprite2D" parent="Suelo" unique_id=188750683]
+position = Vector2(90.5, 704.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate4" type="Sprite2D" parent="Suelo" unique_id=1175467852]
+position = Vector2(125.49999, 704.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate5" type="Sprite2D" parent="Suelo" unique_id=1841459015]
+position = Vector2(160.5, 704.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate6" type="Sprite2D" parent="Suelo" unique_id=1740628132]
+position = Vector2(195.49998, 704.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate7" type="Sprite2D" parent="Suelo" unique_id=1676316752]
+position = Vector2(230.99998, 705)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate8" type="Sprite2D" parent="Suelo" unique_id=1864173103]
+position = Vector2(266, 705)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate9" type="Sprite2D" parent="Suelo" unique_id=1289790302]
+position = Vector2(303.00003, 706)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate11" type="Sprite2D" parent="Suelo" unique_id=700155372]
+position = Vector2(340.49997, 706.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate12" type="Sprite2D" parent="Suelo" unique_id=1264314317]
+position = Vector2(375.99997, 707)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate13" type="Sprite2D" parent="Suelo" unique_id=1405313403]
+position = Vector2(410.99997, 707)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate14" type="Sprite2D" parent="Suelo" unique_id=381222090]
+position = Vector2(445.99997, 707)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate15" type="Sprite2D" parent="Suelo" unique_id=964841694]
+position = Vector2(480.99994, 707)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate16" type="Sprite2D" parent="Suelo" unique_id=550101807]
+position = Vector2(516.49994, 707.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate17" type="Sprite2D" parent="Suelo" unique_id=736791975]
+position = Vector2(553.5, 707.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate18" type="Sprite2D" parent="Suelo" unique_id=1493579801]
+position = Vector2(590.5, 708.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate19" type="Sprite2D" parent="Suelo" unique_id=1762663127]
+position = Vector2(627.49994, 708.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate20" type="Sprite2D" parent="Suelo" unique_id=601674920]
+position = Vector2(662.49994, 708.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate21" type="Sprite2D" parent="Suelo" unique_id=502867128]
+position = Vector2(697.99994, 709)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate22" type="Sprite2D" parent="Suelo" unique_id=4422224]
+position = Vector2(732.99994, 709)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate23" type="Sprite2D" parent="Suelo" unique_id=380901096]
+position = Vector2(767.99994, 709)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate24" type="Sprite2D" parent="Suelo" unique_id=976055731]
+position = Vector2(802.99994, 709)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate25" type="Sprite2D" parent="Suelo" unique_id=1028220910]
+position = Vector2(838.49994, 709.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate26" type="Sprite2D" parent="Suelo" unique_id=132490434]
+position = Vector2(873.49994, 709.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate27" type="Sprite2D" parent="Suelo" unique_id=217212918]
+position = Vector2(910.5, 710.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate29" type="Sprite2D" parent="Suelo" unique_id=2095257724]
+position = Vector2(947.5, 710.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate30" type="Sprite2D" parent="Suelo" unique_id=1806789515]
+position = Vector2(983, 711)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate31" type="Sprite2D" parent="Suelo" unique_id=1774634211]
+position = Vector2(1018, 711)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate32" type="Sprite2D" parent="Suelo" unique_id=509938475]
+position = Vector2(1053, 711)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate33" type="Sprite2D" parent="Suelo" unique_id=1335557312]
+position = Vector2(1088, 711)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate34" type="Sprite2D" parent="Suelo" unique_id=676570895]
+position = Vector2(1123.5, 711.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate35" type="Sprite2D" parent="Suelo" unique_id=1512579466]
+position = Vector2(1158.5001, 711.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate36" type="Sprite2D" parent="Suelo" unique_id=365570919]
+position = Vector2(1195.5001, 712.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate37" type="Sprite2D" parent="Suelo" unique_id=906899628]
+position = Vector2(1232.5, 712.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate38" type="Sprite2D" parent="Suelo" unique_id=629646325]
+position = Vector2(1269.5, 713.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Lateral" type="StaticBody2D" parent="Suelo" unique_id=1884924700]
+physics_material_override = SubResource("PhysicsMaterial_5o2w4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Lateral" unique_id=730252271]
+position = Vector2(-4, 359)
+shape = SubResource("RectangleShape2D_dw6gl")
+
+[node name="Lateral2" type="StaticBody2D" parent="Suelo" unique_id=191655194]
+physics_material_override = SubResource("PhysicsMaterial_5o2w4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/Lateral2" unique_id=969326821]
+position = Vector2(1283, 359)
+shape = SubResource("RectangleShape2D_dw6gl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Suelo" unique_id=1344151191]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/StaticBody2D" unique_id=762130239]
+position = Vector2(641, 706)
+shape = SubResource("RectangleShape2D_cmq6a")
+
+[node name="Crate10" type="Sprite2D" parent="Suelo" unique_id=1797433675]
+position = Vector2(375.5, 586.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate28" type="Sprite2D" parent="Suelo" unique_id=645488136]
+position = Vector2(410.5, 586.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate39" type="Sprite2D" parent="Suelo" unique_id=1838917840]
+position = Vector2(446.00003, 587)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate40" type="Sprite2D" parent="Suelo" unique_id=892572571]
+position = Vector2(480.99997, 587)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate41" type="Sprite2D" parent="Suelo" unique_id=2062120295]
+position = Vector2(516.00006, 587)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate42" type="Sprite2D" parent="Suelo" unique_id=1772451002]
+position = Vector2(551, 587)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate43" type="Sprite2D" parent="Suelo" unique_id=11005481]
+position = Vector2(586.5, 587.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate44" type="Sprite2D" parent="Suelo" unique_id=390217549]
+position = Vector2(621.50006, 587.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Suelo" unique_id=1104415572]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/StaticBody2D2" unique_id=1254542534]
+position = Vector2(497.75, 586)
+shape = SubResource("RectangleShape2D_2o3no")
+
+[node name="Crate45" type="Sprite2D" parent="Suelo" unique_id=288550453]
+position = Vector2(734.5, 476.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate46" type="Sprite2D" parent="Suelo" unique_id=2092715116]
+position = Vector2(769.5, 476.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate47" type="Sprite2D" parent="Suelo" unique_id=1446906712]
+position = Vector2(805, 477)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate48" type="Sprite2D" parent="Suelo" unique_id=288706139]
+position = Vector2(839.99994, 477)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate49" type="Sprite2D" parent="Suelo" unique_id=199433162]
+position = Vector2(875, 477)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate50" type="Sprite2D" parent="Suelo" unique_id=438309454]
+position = Vector2(910, 477)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate51" type="Sprite2D" parent="Suelo" unique_id=1922471817]
+position = Vector2(945.5, 477.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate52" type="Sprite2D" parent="Suelo" unique_id=2024119414]
+position = Vector2(980.5, 477.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate53" type="Sprite2D" parent="Suelo" unique_id=513990615]
+position = Vector2(125.5, 463.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate54" type="Sprite2D" parent="Suelo" unique_id=825618416]
+position = Vector2(160.5, 463.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate55" type="Sprite2D" parent="Suelo" unique_id=1860293691]
+position = Vector2(196.00003, 464)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate56" type="Sprite2D" parent="Suelo" unique_id=1569540369]
+position = Vector2(230.99997, 464)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate57" type="Sprite2D" parent="Suelo" unique_id=48721830]
+position = Vector2(266.00006, 464)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate58" type="Sprite2D" parent="Suelo" unique_id=204736102]
+position = Vector2(301, 464)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate59" type="Sprite2D" parent="Suelo" unique_id=1760620511]
+position = Vector2(336.5, 464.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate60" type="Sprite2D" parent="Suelo" unique_id=983098065]
+position = Vector2(371.50006, 464.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate61" type="Sprite2D" parent="Suelo" unique_id=2002655476]
+position = Vector2(484.5, 355.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate62" type="Sprite2D" parent="Suelo" unique_id=758118266]
+position = Vector2(519.5, 355.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate63" type="Sprite2D" parent="Suelo" unique_id=1216312637]
+position = Vector2(555, 356)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate64" type="Sprite2D" parent="Suelo" unique_id=1009286073]
+position = Vector2(589.99994, 356)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate65" type="Sprite2D" parent="Suelo" unique_id=455078991]
+position = Vector2(625.00006, 356)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate66" type="Sprite2D" parent="Suelo" unique_id=1300312352]
+position = Vector2(660, 356)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate67" type="Sprite2D" parent="Suelo" unique_id=414321871]
+position = Vector2(695.5, 356.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate68" type="Sprite2D" parent="Suelo" unique_id=704438614]
+position = Vector2(730.50006, 356.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate69" type="Sprite2D" parent="Suelo" unique_id=1412955662]
+position = Vector2(843.5, 245.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate70" type="Sprite2D" parent="Suelo" unique_id=862057869]
+position = Vector2(878.5, 245.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate71" type="Sprite2D" parent="Suelo" unique_id=952766527]
+position = Vector2(914, 246)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate72" type="Sprite2D" parent="Suelo" unique_id=46356252]
+position = Vector2(948.99994, 246)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate73" type="Sprite2D" parent="Suelo" unique_id=260627560]
+position = Vector2(984, 246)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate74" type="Sprite2D" parent="Suelo" unique_id=1359572087]
+position = Vector2(1019, 246)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate75" type="Sprite2D" parent="Suelo" unique_id=1766894891]
+position = Vector2(1054.5, 246.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate76" type="Sprite2D" parent="Suelo" unique_id=2019610635]
+position = Vector2(1089.5, 246.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate77" type="Sprite2D" parent="Suelo" unique_id=1830841955]
+position = Vector2(234.5, 232.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate78" type="Sprite2D" parent="Suelo" unique_id=786269240]
+position = Vector2(269.5, 232.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate79" type="Sprite2D" parent="Suelo" unique_id=1909163567]
+position = Vector2(305.00003, 233)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate80" type="Sprite2D" parent="Suelo" unique_id=1142672131]
+position = Vector2(339.99997, 233)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate81" type="Sprite2D" parent="Suelo" unique_id=2129848509]
+position = Vector2(375.00006, 233)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate82" type="Sprite2D" parent="Suelo" unique_id=598598909]
+position = Vector2(410, 233)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate83" type="Sprite2D" parent="Suelo" unique_id=1554893536]
+position = Vector2(445.5, 233.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate84" type="Sprite2D" parent="Suelo" unique_id=2112953166]
+position = Vector2(480.50006, 233.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Suelo" unique_id=989750298]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/StaticBody2D3" unique_id=376508060]
+position = Vector2(356, 233)
+shape = SubResource("RectangleShape2D_x0xkc")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Suelo" unique_id=1332280263]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Suelo/StaticBody2D4" unique_id=976479833]
+position = Vector2(250, 461.875)
+shape = SubResource("RectangleShape2D_jpmwn")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Suelo" unique_id=756741313]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Suelo/StaticBody2D5" unique_id=1722290199]
+position = Vector2(609, 355)
+shape = SubResource("RectangleShape2D_gnj4f")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Suelo" unique_id=1895338701]
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Suelo/StaticBody2D6" unique_id=2135678213]
+position = Vector2(855.5, 476.5)
+shape = SubResource("RectangleShape2D_hn5fe")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Suelo" unique_id=277056559]
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Suelo/StaticBody2D7" unique_id=541841083]
+position = Vector2(967.5, 245)
+shape = SubResource("RectangleShape2D_a8yva")
+
+[node name="Crate85" type="Sprite2D" parent="Suelo" unique_id=545853989]
+position = Vector2(551.5, 121.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate86" type="Sprite2D" parent="Suelo" unique_id=564350396]
+position = Vector2(586.5, 121.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate87" type="Sprite2D" parent="Suelo" unique_id=547499845]
+position = Vector2(622, 122)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate88" type="Sprite2D" parent="Suelo" unique_id=209854774]
+position = Vector2(656.99994, 122)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate89" type="Sprite2D" parent="Suelo" unique_id=88286243]
+position = Vector2(692, 122)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate90" type="Sprite2D" parent="Suelo" unique_id=971535306]
+position = Vector2(727, 122)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate91" type="Sprite2D" parent="Suelo" unique_id=1660421531]
+position = Vector2(762.5, 122.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="Crate92" type="Sprite2D" parent="Suelo" unique_id=1785691865]
+position = Vector2(797.5, 122.5)
+scale = Vector2(2.3125, 2.1875)
+texture = ExtResource("2_j6d32")
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="Suelo" unique_id=1217945270]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/StaticBody2D8" unique_id=278332125]
+position = Vector2(673, 122)
+shape = SubResource("RectangleShape2D_x0xkc")
+
+[node name="Player" type="Node2D" parent="." unique_id=960125175]
+position = Vector2(-4, 0)
+
+[node name="jugador" type="CharacterBody2D" parent="Player" unique_id=1683039098]
+position = Vector2(253, 651)
+script = ExtResource("6_cmq6a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player/jugador" unique_id=1980371250]
+process_mode = 2
+physics_interpolation_mode = 1
+auto_translate_mode = 1
+light_mask = 1023
+visibility_layer = 1023
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-1.0000153, 0)
+scale = Vector2(2.006, 2)
+sprite_frames = SubResource("SpriteFrames_a8yva")
+animation = &"Jump"
+autoplay = "Static"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/jugador" unique_id=103234936]
+position = Vector2(-1, 0)
+shape = SubResource("CapsuleShape2D_cmq6a")
+
+[node name="gun_shot1" type="AudioStreamPlayer" parent="Player/jugador" unique_id=1168877788]
+stream = ExtResource("8_2o3no")
+
+[node name="jump_sound" type="AudioStreamPlayer2D" parent="Player/jugador" unique_id=222888193]
+stream = ExtResource("9_jpmwn")
+
+[node name="Enemigo" parent="." unique_id=1480619696 instance=ExtResource("9_x0xkc")]
+position = Vector2(777, 646)

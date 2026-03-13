@@ -1,75 +1,59 @@
-[gd_scene format=3 uid="uid://7fmtbhd4lwoj"]
+[gd_scene format=3 uid="uid://f0n0521ux46"]
 
-[ext_resource type="Script" uid="uid://p63jeogn6rm7" path="res://scripts/MainMenu.gd" id="1"]
+[ext_resource type="Script" uid="uid://b3a6yth8fg12t" path="res://scripts/MainMenu.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://cfym411p8cudn" path="res://Assets/Sound/background-music-382052.mp3" id="2_6jbdy"]
+[ext_resource type="Texture2D" uid="uid://brjfma7wfj1an" path="res://Assets/environment/layers/main menu.png" id="2_iwbf0"]
 
-[node name="MainMenu" type="Control" unique_id=1745895182]
+[node name="MainMenu" type="Control" unique_id=1429306775]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource("1")
 
-[node name="Background" type="ColorRect" parent="." unique_id=1020883190]
+[node name="Background" type="ColorRect" parent="." unique_id=1942644477]
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color(0.016, 0.05, 0.1, 1)
+color = Color(0.04, 0.08, 0.18, 1)
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1764277039]
+[node name="MainMenu" type="Sprite2D" parent="Background" unique_id=371734147]
+position = Vector2(640, 360.5)
+scale = Vector2(0.90625, 0.93098956)
+texture = ExtResource("2_iwbf0")
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2023375742]
-layout_mode = 0
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="VBox" type="VBoxContainer" parent="CenterContainer" unique_id=1594079785]
-layout_mode = 2
-theme_override_constants/separation = 20
+[node name="VBox" type="VBoxContainer" parent="." unique_id=972974640]
+texture_filter = 6
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -603.0
+offset_top = -158.0
+offset_right = -203.0
+offset_bottom = 202.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
 alignment = 1
 
-[node name="TitleLabel" type="Label" parent="CenterContainer/VBox" unique_id=568497294]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0.83, 1, 1)
-theme_override_font_sizes/font_size = 52
-text = "SAVING PRINCESS DYNA"
-horizontal_alignment = 1
-
-[node name="TaglineLabel" type="Label" parent="CenterContainer/VBox" unique_id=1119381409]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0.85, 0, 1)
-theme_override_font_sizes/font_size = 18
-text = "⚡ HUMANITY FIRST. ALWAYS. ⚡"
-horizontal_alignment = 1
-
-[node name="Spacer" type="Control" parent="CenterContainer/VBox" unique_id=616039837]
-custom_minimum_size = Vector2(0, 30)
-layout_mode = 2
-
-[node name="PlayButton" type="Button" parent="CenterContainer/VBox" unique_id=140028626]
-custom_minimum_size = Vector2(320, 56)
+[node name="PlayButton" type="Button" parent="VBox" unique_id=549367556]
+texture_filter = 1
+custom_minimum_size = Vector2(300, 56)
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
-text = "▶  PLAY"
+text = "PLAY"
 
-[node name="OptionsButton" type="Button" parent="CenterContainer/VBox" unique_id=2069880564]
-custom_minimum_size = Vector2(320, 48)
+[node name="QuitButton" type="Button" parent="VBox" unique_id=1393342327]
+texture_filter = 1
+custom_minimum_size = Vector2(300, 48)
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
-text = "⚙  OPTIONS"
+text = "QUIT"
 
-[node name="QuitButton" type="Button" parent="CenterContainer/VBox" unique_id=244356095]
-custom_minimum_size = Vector2(320, 48)
-layout_mode = 2
-theme_override_font_sizes/font_size = 18
-text = "✕  QUIT"
-
-[node name="VersionLabel" type="Label" parent="." unique_id=920203802]
-layout_mode = 0
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -160.0
-offset_top = -30.0
-theme_override_colors/font_color = Color(0.3, 0.5, 0.6, 0.6)
-text = "v1.0 — Humanity First"
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1412292661]
+stream = ExtResource("2_6jbdy")
+autoplay = true
+parameters/looping = true

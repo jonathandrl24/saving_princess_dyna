@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://ylv5k4v8qkvn"]
+
+[ext_resource type="Script" uid="uid://bx1c4rg7ywjds" path="res://scripts/princess.gd" id="1_efo17"]
+[ext_resource type="Texture2D" uid="uid://chomyhuu2iq4b" path="res://Assets/spritesheets/Princess/girl_animations/sprite_sheet.png" id="1_t485r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efo17"]
+atlas = ExtResource("1_t485r")
+region = Rect2(0, 425, 150, 85)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rihqy"]
+atlas = ExtResource("1_t485r")
+region = Rect2(150, 425, 150, 85)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yl5hm"]
+atlas = ExtResource("1_t485r")
+region = Rect2(300, 425, 150, 85)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbfgo"]
+atlas = ExtResource("1_t485r")
+region = Rect2(450, 425, 150, 85)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vkhi"]
+atlas = ExtResource("1_t485r")
+region = Rect2(600, 425, 150, 85)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jd20x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efo17")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rihqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yl5hm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbfgo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vkhi")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d1lug"]
+radius = 20.0
+height = 58.0
+
+[node name="Princess" type="CharacterBody2D" unique_id=1027449583]
+script = ExtResource("1_efo17")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1355257661]
+position = Vector2(12, 0)
+scale = Vector2(1.3433334, 1.2676471)
+sprite_frames = SubResource("SpriteFrames_jd20x")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1304499461]
+position = Vector2(10, 24)
+shape = SubResource("CapsuleShape2D_d1lug")

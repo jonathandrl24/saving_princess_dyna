@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://4n6ingvq3xh2"]
+
+[ext_resource type="Script" uid="uid://bu55j3oi0yh8f" path="res://scripts/game_over.gd" id="1_fu4wh"]
+[ext_resource type="Texture2D" uid="uid://dvv34cwfg3ftq" path="res://Assets/environment/layers/game over.png" id="2_x6o8e"]
+[ext_resource type="AudioStream" uid="uid://d21fn7xquva8n" path="res://Assets/Sound/game over.mp3" id="3_x6o8e"]
+
+[node name="Game_over" type="Control" unique_id=1406923799]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fu4wh")
+
+[node name="GameOver" type="Sprite2D" parent="." unique_id=99848071]
+position = Vector2(634.5, 359.5)
+scale = Vector2(0.91264206, 0.94661456)
+texture = ExtResource("2_x6o8e")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1611783288]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 423.0
+offset_right = 870.0
+offset_bottom = 610.0
+
+[node name="PLAYButton" type="Button" parent="VBoxContainer" unique_id=407137509]
+layout_mode = 2
+text = "TRY AGAIN"
+
+[node name="QUITButton" type="Button" parent="VBoxContainer" unique_id=460826788]
+layout_mode = 2
+text = "QUIT"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=365656760]
+stream = ExtResource("3_x6o8e")
+autoplay = true
+parameters/looping = true
