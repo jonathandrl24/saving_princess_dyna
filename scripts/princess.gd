@@ -31,3 +31,4 @@ func _rescatar():
 	sprite.play("idle")  # play a happy animation here if you have one
 	await get_tree().create_timer(1.0).timeout
 	SceneManager.go_to_mission_complete()
+	print("Mission completed, you win")
